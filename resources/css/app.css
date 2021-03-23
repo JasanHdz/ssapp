@@ -3,3 +3,12 @@
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+
+@layer base {
+  p {
+    @apply my-1;
+  }
+  strong {
+    @apply font-semibold text-sm;
+  }
+}
