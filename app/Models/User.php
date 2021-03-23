@@ -42,4 +42,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getGetImageAttribute() {
+        return url('https://source.unsplash.com/random/people');
+    }
 }

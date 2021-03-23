@@ -28,7 +28,7 @@ class UserFactory extends Factory
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'last_name' => $this->faker->lastName                                  ,
             'second_last_name' => $this->faker->lastName                                  ,
-            'avatar' => $this->faker->imageUrl($width = 200, $height = 200, 'people')                                   ,
+            'avatar' => $this->faker->imageUrl($width = 200, $height = 200, 'cats')                                   ,
             'key_one' => 123,
             'key_two' => $this->faker->swiftBicNumber,
             'phone' => 12345,
