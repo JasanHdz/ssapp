@@ -13,9 +13,35 @@
   }
 }
 
+@layer utilities {
+  .vh-header {
+    min-height: calc(100vh - 64px);
+  }
+
+  @variants responsive {
+    .vh-header {
+      min-height: calc(100vh - 64px);
+    }
+  }
+}
+
 /* menu styles */
 #toogle-button:checked ~ #toogle #close { display: block; }
 #toogle-button:checked ~ #toogle #open { display: none; }
 #toogle-button:checked ~ #overlay { visibility: visible; backdrop-filter: blur(2px); } 
 #toogle-button:checked ~ #navigation { transform: translateX(0); }
 #navigation { overflow-y: auto; transition: 0.3s transform; }
+
+#login {
+  min-height: calc(100vh - 132px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 640px) {
+  #login {
+    height: auto;
+    min-height: auto;
+  }
+}
