@@ -18,7 +18,10 @@ mix
     require('tailwindcss'),
     require('postcss-nested'),
     require('autoprefixer'),
-  ]);
+  ])
+  .browserSync({
+    proxy: 'http://localhost:8000/'
+  });
 
 if (mix.inProduction()) {
   mix
