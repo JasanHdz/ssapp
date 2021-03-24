@@ -1842,6 +1842,12 @@ module.exports = {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+$overlay = document.getElementById('overlay');
+$checkbox = document.getElementById('toogle-button');
+$overlay.addEventListener('click', function () {
+  $checkbox.checked = false;
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

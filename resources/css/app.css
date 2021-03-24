@@ -13,29 +13,8 @@
   }
 }
 
-
-#close, #open {
-  /* margin-left: 10px; */
-  width: 25px;
-  height: 25px;
-  position: relative;
-  cursor: pointer;
-}
-#open::after, #close::after {
-  content: '';
-  position: absolute;
-  background-repeat: no-repeat;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: 20;
-}
-#open::after { background: url('../icons/menu.svg'); }
-#close::after { background: url('../icons/cancel.svg'); }
-
 /* menu styles */
-#toogle-button:checked ~ #toogle #close { display: block; visibility: visible; }
+#toogle-button:checked ~ #toogle #close { display: block; }
 #toogle-button:checked ~ #toogle #open { display: none; }
 #toogle-button:checked ~ #overlay { visibility: visible; backdrop-filter: blur(2px); } 
 #toogle-button:checked ~ #navigation { transform: translateX(0); }

@@ -5,7 +5,7 @@
     <h1 class="text-3xl font-bold">Usuarios</h1>
     <form class="flex my-3" action="{{ route('search') }}" method="GET">
       <input required name="search" value="{{ request()->input('search', old('search')) }}" type="text" class="form-input w-full pr-13" placeholder="Buscar usuario">
-      <button type="submit" class="-ml-14 rounded-r-md px-2 cursor-pointer text-white bg-blue-700">Buscar</button>
+      <button type="submit" class="-ml-14 rounded-md px-2 cursor-pointer text-white bg-blue-700">Buscar</button>
       <select name="option" class="form-select cursor-pointer w-28 ml-2">
         <option value="name" {{ request()->input('option') == 'name' ? 'selected' : '' }} >Nombre</option>
         <option value="key" {{ request()->input('option') == 'key' ? 'selected' : '' }}>Clave</option>
