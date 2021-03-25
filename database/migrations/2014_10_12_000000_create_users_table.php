@@ -20,13 +20,13 @@ class CreateUsersTable extends Migration
             $table->string('second_last_name', 44);
             $table->string('email')->unique();
             $table->string('password');
-            $table->integer('key_one');            
+            $table->unsignedBigInteger('key_one');            
             $table->string('key_two', 18);            
-            $table->integer('phone');
-            $table->string('avatar');
+            $table->unsignedBigInteger('phone');
             $table->string('street', 44);
             $table->string('suburb', 44);
             $table->string('outdoor_number', 44);
+            $table->string('avatar')->nullable();
             $table->string('interior_number', 44)->nullable();
 
             $table->timestamp('email_verified_at')->nullable();

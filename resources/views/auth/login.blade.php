@@ -84,3 +84,7 @@
 	</section>
 </main>
 @endsection
+
+@section('scripts')
+	<script type="module" src="{{ asset('js/forms.js') }}"></script>
+@endsection

@@ -22,6 +22,6 @@
         
         @yield('content')
     </div>
-    <script src="{{ asset('js/menu.js') }}"></script>
+    @yield('scripts')
 </body>
 </html>

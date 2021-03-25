@@ -18,24 +18,32 @@
         <div class="mb-4 uppercase w-min-content bg-primary py-2 px-5">logo</div>
         <div class="-mx-4">
           <li class="{{ Request::is('/') ? 'text-blue-500' : '' }} cursor-pointer p-4 text-cool-gray-900 hover:bg-gray-300">
-            <a class="flex items-center" href="">
+            <a class="flex items-center" href="/">
               <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
               <span class="ml-2 uppercase">Dashboard</span>
             </a>
           </li>
-          <li class="{{ Request::is('/perfil') ? 'text-blue-500' : '' }}cursor-pointer p-4 text-cool-gray-900 hover:bg-gray-300">
-            <a href="" class="flex items-center">
+          <li class="{{ Request::is('/profile') ? 'text-blue-500' : '' }} cursor-pointer p-4 text-cool-gray-900 hover:bg-gray-300">
+            <a href="/profile" class="flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
               <span class="ml-2 uppercase">Perfil</span>
             </a>
           </li>
         </div>
       </ul>
+      
+      @if (Auth::check())
+       <form class="grid row-gap-4" action="{{ route('logout') }}" method="post">
+        @csrf
+        <button type="submit" class="text-center cursor-pointer rounded border border-blue-500 text-blue-500 text-cool-white py-3 px-16">Cerrar sesión</button>
+       </form>
+      @else
+        <div class="grid row-gap-4">
+          <a href="{{ route('login') }}" class="text-center cursor-pointer rounded bg-primary text-cool-white py-3 px-16">Iniciar sesión</a>
+          <a href="{{ route('register') }}" class="text-center cursor-pointer rounded border border-blue-500 text-blue-500 text-cool-white py-3 px-16">Registrarse</a>
+        </div>
+      @endif
 
-      <div class="grid row-gap-4">
-        <a href="{{ route('login') }}" class="text-center cursor-pointer rounded bg-primary text-cool-white py-3 px-16">Iniciar sesión</a>
-        <a href="{{ route('logout') }}" class="text-center cursor-pointer rounded border border-blue-500 text-blue-500 text-cool-white py-3 px-16">Registrarse</a>
-      </div>
 
     </nav>
 

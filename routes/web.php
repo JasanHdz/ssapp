@@ -13,9 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\PageController::class, 'users']);
-Route::get('search', [App\Http\Controllers\PageController::class, 'search'])->name('search');
+Route::get('/', [\App\Http\Controllers\PageController::class, 'users'])
+  ->middleware('auth');
+
+Route::get('search', [App\Http\Controllers\PageController::class, 'search'])
+  ->name('search');
+
+Route::get('/profile', [App\Http\Controllers\PageController::class, 'profile'])
+  ->name('profile');
+
 Auth::routes();
 
-Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])
+  ->name('home');
 

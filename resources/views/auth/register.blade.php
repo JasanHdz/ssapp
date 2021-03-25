@@ -11,7 +11,7 @@
 		</header>
 		
 
-		<form id="login" class="px-6 sm:px-10" method="POST" action="{{ route('login') }}">
+		<form id="login" class="px-6 sm:px-10" method="POST" action="{{ route('register') }}">
 			@csrf
 			
 			<div class="md:my-5 grid grid-flow-row md:grid-cols-2 md:col-gap-4">
@@ -26,14 +26,9 @@
 	
 						<input id="name" type="text" class="form-input w-full @error('name')  border-red-500 @enderror"
 								name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-	
-						@error('name')
-						<p class="text-red-500 text-xs italic mt-4">
-								{{ $message }}
-						</p>
-						@enderror
+						
+						<p class="text-red-500 text-sm italic mt-4 hidden">@error('name') {{ $message }} @enderror </p>
 					</div>
-				 
 					{{-- Apellidos --}}
 					<div class="grid grid-cols-2 col-gap-2">
 						<div class="">
@@ -46,11 +41,7 @@
 									@error('last-name') border-red-500 @enderror" name="lastName"
 									required
 								>
-								@error('last-name')
-								<p class="text-red-500 text-xs italic mt-4">
-									{{ $message }}
-								</p>
-								@enderror
+								<p class="text-red-500 text-sm italic mt-4 hidden">@error('last-name') {{ $message }} @enderror </p>
 							</div>
 						</div>
 						
@@ -64,11 +55,7 @@
 									@error('second-last-name') border-red-500 @enderror" name="secondLastName"
 									required
 								>
-								@error('second-last-name')
-								<p class="text-red-500 text-xs italic mt-4">
-									{{ $message }}
-								</p>
-								@enderror
+								<p class="text-red-500 text-sm italic mt-4 hidden">@error('second-last-name')  {{ $message }} @enderror </p>
 							</div>
 						</div>
 					</div>
@@ -83,11 +70,7 @@
 							class="form-input w-full @error('phone') border-red-500 @enderror" name="phone"
 							required>
 		
-						@error('phone')
-						<p class="text-red-500 text-xs italic mt-4">
-							{{ $message }}
-						</p>
-						@enderror
+							<p class="text-red-500 text-sm italic mt-4 hidden">@error('phone')  {{ $message }} @enderror </p>
 					</div>
 	
 					{{-- Claves --}}
@@ -102,11 +85,7 @@
 									@error('key-one') border-red-500 @enderror" name="keyOne"
 									required
 								>
-								@error('key-one')
-								<p class="text-red-500 text-xs italic mt-4">
-									{{ $message }}
-								</p>
-								@enderror
+								<p class="text-red-500 text-sm italic mt-4 hidden">@error('key-one')  {{ $message }} @enderror </p>
 							</div>
 						</div>
 						
@@ -120,11 +99,7 @@
 									@error('key-two') border-red-500 @enderror" name="keyTwo"
 									required
 								>
-								@error('key-two')
-								<p class="text-red-500 text-xs italic mt-4">
-									{{ $message }}
-								</p>
-								@enderror
+								<p class="text-red-500 text-sm italic mt-4 hidden">@error('key-two')  {{ $message }} @enderror </p>
 							</div>
 						</div>
 					</div>
@@ -138,17 +113,13 @@
 						<input id="email" type="email"
 							class="form-input w-full @error('email') border-red-500 @enderror" name="email"
 							value="{{ old('email') }}" required autocomplete="email" autofocus>
-		
-						@error('email')
-						<p class="text-red-500 text-xs italic mt-4">
-							{{ $message }}
-						</p>
-						@enderror
+						
+						<p class="text-red-500 text-sm italic mt-4 hidden">@error('email')  {{ $message }} @enderror </p>
 					</div>
 	
 				</div>
 
-				<div class="mt-4 sm:mt-0 space-y-6">
+				<div class="mt-6 sm:mt-0 space-y-6">
 	
 					{{-- Calle --}}
 					<div class="flex flex-wrap">
@@ -159,12 +130,8 @@
 						<input id="street" type="text"
 							class="form-input w-full @error('street') border-red-500 @enderror" name="street"
 							required>
-		
-						@error('street')
-						<p class="text-red-500 text-xs italic mt-4">
-							{{ $message }}
-						</p>
-						@enderror
+
+						<p class="text-red-500 text-sm italic mt-4 hidden">@error('street')  {{ $message }} @enderror </p>
 					</div>
 					
           {{-- Números --}}
@@ -176,14 +143,11 @@
 									id="outdoor" 
 									type="text"
 									class="form-input w-full 
-									@error('outdoor') border-red-500 @enderror" name="outdoor"
+									@error('outdoor') border-red-500 @enderror" 
+									name="outdoor"
 									required
 								>
-								@error('outdoor')
-								<p class="text-red-500 text-xs italic mt-4">
-									{{ $message }}
-								</p>
-								@enderror
+								<p class="text-red-500 text-sm italic mt-4 hidden">@error('outdoor')  {{ $message }} @enderror </p>
 							</div>
 						</div>
 						
@@ -194,13 +158,10 @@
 									id="interior" 
 									type="text"
 									class="form-input w-full 
-									@error('interior') border-red-500 @enderror" name="interior"
+									@error('interior') border-red-500 @enderror" 
+									name="interior"
 								>
-								@error('interior')
-								<p class="text-red-500 text-xs italic mt-4">
-									{{ $message }}
-								</p>
-								@enderror
+								<p class="text-red-500 text-sm italic mt-4 hidden">@error('interior')  {{ $message }} @enderror </p>
 							</div>
 						</div>
 					</div>
@@ -212,14 +173,11 @@
 						</label>
 		
 						<input id="suburb" type="text"
-							class="form-input w-full @error('suburb') border-red-500 @enderror" name="suburb"
+							class="form-input w-full @error('suburb') border-red-500 @enderror" 
+							name="suburb"
 							required>
 		
-						@error('suburb')
-						<p class="text-red-500 text-xs italic mt-4">
-							{{ $message }}
-						</p>
-						@enderror
+						<p class="text-red-500 text-sm italic mt-4 hidden">@error('suburb')  {{ $message }} @enderror </p>
 					</div>
 	
 					{{-- contraseña --}}
@@ -229,39 +187,37 @@
 						</label>
 		
 						<input id="password" type="password"
-							class="form-input w-full @error('password') border-red-500 @enderror" name="password"
+							class="form-input w-full @error('password') border-red-500 @enderror" 
+							name="password"
 							required autocomplete="new-password">
 		
-						@error('password')
-						<p class="text-red-500 text-xs italic mt-4">
-							{{ $message }}
-						</p>
-						@enderror
+						<p class="text-red-500 text-sm italic mt-4 hidden">@error('password')  {{ $message }} @enderror </p>
 					</div>
 					
 					{{-- confirmar contraseña --}}
 					<div class="flex flex-wrap">
 						<label for="password-confirm" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
-								{{ __('Confirm Password') }}:
+								Confirmar contraseña:
 						</label>
 	
 						<input id="password-confirm" type="password" class="form-input w-full"
-								name="password_confirmation" required autocomplete="new-password">
-					</div>
+							name="password_confirmation" required autocomplete="new-password">
+
+						<p class="text-red-500 text-sm italic mt-4 hidden"></p>
 				</div>	
 				
-					{{-- Submit --}}
-				<div class="md:col-start-1 md:col-end-3 flex flex-wrap my-6">
-						<button type="submit"
-						class="w-full select-none font-bold whitespace-no-wrap rounded py-3 px-7 uppercase text-base leading-normal no-underline text-gray-100 bg-primary hover:bg-cool-gray-900">
-								registrarse
-						</button>
-	
-				</div>
+				
+			</div>
+			{{-- Submit --}}
+			<div class="md:col-start-1 md:col-end-3 flex flex-wrap my-6">
+					<button type="submit"
+					class="w-full select-none font-bold whitespace-no-wrap rounded py-3 px-7 uppercase text-base leading-normal no-underline text-gray-100 bg-primary hover:bg-cool-gray-900">
+							registrarse
+					</button>
 
 			</div>
 
-			<div class="flex flex-wrap">
+			<div class="md:col-start-1 md:col-end-3 flex flex-wrap mt-4">
 				@if (Route::has('login'))
 				<p class="text-center mb-4 font-semibold w-full">¿Ya tienes cuenta?</p>
 				<p class="text-center cursor-pointer w-full uppercase border rounded py-3 px-7 border-blue-500 bg-white text-blue-500 hover:text-blue-700">
@@ -273,4 +229,8 @@
 
 	</section>
 </main>
+@endsection
+
+@section('scripts')
+	<script type="module" src="{{ asset('js/forms.js') }}"></script>
 @endsection

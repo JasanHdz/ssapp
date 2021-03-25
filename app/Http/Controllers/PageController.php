@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
 {
@@ -38,5 +39,11 @@ class PageController extends Controller
                 'users' => $users,
                 'query' => $search
             ]);
+    }
+
+    public function profile() 
+    {
+        $user = Auth::user();
+        return view('profile', compact('user'));
     }
 }
